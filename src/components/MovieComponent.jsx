@@ -6,13 +6,7 @@ const MovieComponent = ({ id, fullTitle, year, image, rating }) => {
       </h1>
       <p>Id: {id}</p>
       <p>Rating: {rating}</p>
-      <img
-        width="300px"
-        height="300px"
-        src={image}
-        alt={fullTitle + "poster"}
-      />
-      <hr />
+      <img src={image} alt={fullTitle + "poster"} />
     </div>
   );
 };

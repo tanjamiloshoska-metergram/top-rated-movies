@@ -1,16 +1,14 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import MovieComponent from "./components/MovieComponent";
-import movies from "./constants/movies";
 
 function App() {
   const [topMovies, setTopMovies] = useState([]);
 
   useEffect(() => {
-    // fetch("https://imdb-api.com/en/API/Top250Movies/k_bcc5wqvp")
-    //   .then((response) => response.json())
-    //   .then((data) => setTopMovies(data.items));
-    setTopMovies(movies.items);
+    fetch("https://imdb-api.com/en/API/Top250Movies/k_bcc5wqvp")
+      .then((response) => response.json())
+      .then((data) => setTopMovies(data.items));
   }, []);
 
   const filterAndSortMovies = (movies) => {
